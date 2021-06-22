@@ -11,6 +11,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
+    <script>
+     function getParameterByName(name, defaultValue) {
+         if (!defaultValue) {
+             defaultValue = '';
+         }
+         name = name.replace(/[\[\]]/g, "\\$&");
+         var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+             results = regex.exec(window.location.href);
+         if (!results) return defaultValue;
+         if (!results[2]) return defaultValue;
+         return decodeURIComponent(results[2].replace(/\+/g, " "));
+     }
+ </script>
   
 </head>
 <body>
@@ -28,7 +41,7 @@
             <h1>BeMob Simple Landing</h1>         
             <p>This is a sample landing page. Click on the button below to see the offer page.</p>
             <p>
-                <a href="https://testing.onlyfortests.tech/click" class="btn btn-success">Click me!</a>
+                <a href="https://track.onlyfortests.tech/click?p1={trackingDomain}" class="btn btn-success">Click me!</a>
                
             </p>
         </div>
