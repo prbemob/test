@@ -11,7 +11,7 @@ function bemobCb(params) {
     for (var i = 0; i < e.length; i++) {
         var ex = re.exec(e[i].href);
         if (ex) {
-            e[i].href = params.ctaSecureUrl.replace('%%OFFER_NUMBER%%', ex[1] || 1);
+            e[i].href = params.ctaSecureUrl.replace('%%OFFER_NUMBER%%', ex[2] || 2);
         }
     }
 }
