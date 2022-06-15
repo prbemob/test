@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Let's Stay Tuned!</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="boostrap.css">
+    <script src="jquery.js"></script> 
+    <script>
+        function GetURLParameter(sParam)
+        {
+            var sPageURL = window.location.search.substring(1);
+            var sURLVariables = sPageURL.split('&');
+            for (var i = 0; i < sURLVariables.length; i++)
+            {
+                var sParameterName = sURLVariables[i].split('=');
+                if (sParameterName[0] == sParam)
+                {
+                    return sParameterName[1];
+                }
+            }
+        }
+        $(document).ready(function() {
+            $('.acceptForm').click(function(e){
+                var tech = GetURLParameter('cid');
+
+                e.preventDefault();
+                $.ajax({
+                    url: 'https://zbzrq.bemobtrcks.com/postback?cid='+tech,
+                    type: 'POST',
+
+                })
+                .complete(function(msg) {
+                    $(".has-success ").html("Thanks for subscribing to our newsletter!");
+                })
+
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">BeMob Simple Offer</a>
+            </div>
+        </div>
+    </nav>
+
+     <div class="container theme-showcase" role="main">
+<div class="row">
+            <div class="jumbotron">
+                <h1>BeMob Simple Landing</h1>
+            <p class="row lead">
+            <form role="form">
+                <p class="form-group">
+                    <label for="InputEmail1">Enter your email to subscribe to our newsletter. </label>
+                    <input type="email" class="form-control" id="InputEmail1" placeholder="Enter email">
+                </p>
+                 <button type="submit" class="btn btn-lg btn-success acceptForm">Subscribe</button>
+           </form>
+                 <p>
+                 </p>
+                <p class="row has-success lead" style="color: #3c763d">
+    
+        </div>
+    </div>
+</body>
+
+</html>
